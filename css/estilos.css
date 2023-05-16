@@ -1,78 +1,122 @@
 :root {
-  --cinza: #c5c5c5;
-  --lilas: #9264FF;
-  --lilas-escuro: #6232d3;
-  --branca: #fff;
-  --luz: #FFCB00;
+  --gray-color: #d5d8e1;
+  --gray-color2: #b5b8c1;
+  --gray-color3: #909296;
+  --white-color: #fefefe;
+  --black-color: #080808;
+  --blue-color: #097dfa;
+  --blue-color2: #b3d3f5;
+  --notch-color: #333333;
 }
 
 body {
   align-items: center;
-  background: linear-gradient(45deg, #d5c5ff 0%,#ae5dff 100%);
+  text-align: center;
+  background: var(--blue-color2);
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   min-height: 100vh;
+  justify-content: center;
 }
 
-h1 {
-  color: var(--branca);
-  margin-bottom: 20px;
-  font-size: 2rem;
+
+.iphone {
+  border: 10px solid black;
+  border-radius: 40px;
+  width: 320px;
+  height: 650px;
+  position: relative;
+  box-shadow: 0px 20px 15px #33333335;
 }
 
-.bateria {
-  width: 15rem;
-  height: 15rem;
-  margin-bottom: -3px;
+.notch {
+  z-index: 50;
+  top: 0;
+  left: 32%;
+  position: absolute;
+  background: #000000;
+  width: 100px;
+  height: 20px;
+  border-radius: 0px 0px 16px 16px;
 }
 
-.teclado {
-  background: linear-gradient(to bottom, #eeeeee 0%,#cccccc 100%);
-  box-shadow: 10px 10px 5px 5px var(--lilas), 10px 10px 10px #000;
-  border-radius: 10px;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
+.speaker {
+  position: absolute;
+  width: 70px;
+  height: 8px;
+  background: var(--notch-color);
+  border-radius: 8px;
+  left: 15%;
+}
+
+.screen {
+  position:absolute;
+  background: var(--white-color);
+  background-size:cover;
+  width:100%;
+  height:100%;
+  border-radius:30px;
+}
+
+.sound_icon {
+  position: absolute;
+  width: 50%;
+  top: 20%;
+  left: 25%;
+}
+
+.keyboard_bg {
+  position: absolute;
+  text-align: center;
+  background: var(--gray-color);
+  background-size: cover;
+  width: 100%;
+  height: 40%;
+  border-radius: 0px 0px 30px 30px;
+  top: 60%;
+}
+
+.keyboard {
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  justify-content: space-around;
+  top: 60%;
   padding: 10px;
+  z-index: 2;
+  border-radius: 15px;
+  transition: transform 400ms ease-in-out;
 }
 
 .tecla {
-  background-color: var(--branca);
+  background-color: var(--white-color);
   border-radius: 10px;
-  box-shadow: 3px 3px 0 var(--cinza);
-  color: var(--lilas);
+  box-shadow: 3px 3px 0 var(--gray-color);
+  color: var(--black-color);
   cursor: pointer;
-  height: 100px;
-  font-size: 1.5em;
-  font-weight: bold;
-  line-height: 90px;
-  text-align: center;
-  width: 100px;
+  height: 65px;
+  font-size: 1rem;
+  width: 65px;
+  padding: 20px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tecla:hover {
-  box-shadow: 1px 1px 5px 3px #bdbdbd;
+  box-shadow: 0px 0px 5px 5px var(--gray-color2);
   border-radius: 10px;
 }
 
 .tecla.ativa,
 .tecla:active {
-  background-color: var(--lilas);
-  border: 2px solid  var(--lilas);
-  box-shadow: 3px 3px 0 var(--lilas-escuro) inset;
-  color: var(--branca);
-  outline: none;
-}
-
-.tecla.focus,
-.tecla:focus {
-  outline: none;
-  box-shadow: 1px 1px 10px var(--luz);
+  background-color: var(--gray-color2);
+  box-shadow: 3px 3px 0 var(--blue-color) inset;
 }
 
 .tecla.ativa:focus,
 .tecla:active:focus {
-  box-shadow: 3px 3px 0 var(--lilas-escuro) inset, 1px 1px 10px var(--luz);
+  box-shadow: 3px 3px 0 var(--gray-color3) inset, 0px 0px 1px 2px var(--blue-color);
 }
